@@ -38,10 +38,11 @@ contribution graph, so work that never reaches `main` does not show up there.
 ## Starting a new topic
 
 ```bash
-cp -r _template go            # 1. copy the template, name it after the topic
-git checkout -b go            # 2. branch with the same name
-# 3. fill in go/README.md, add a row to the table above
+mkdir go && git checkout -b go       # folder and branch, same name
 ```
+
+Then write `go/README.md` — what the topic is, the source I am following, and a table of
+the numbered folders inside it — and add a row to the table above.
 
 ## Resources I use
 
