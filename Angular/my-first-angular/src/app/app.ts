@@ -4,9 +4,10 @@ import { Module1 } from './components/module/module1/module1';
 import { Module2 } from './components/module/module2/module2';
 import { Module3 } from './components/module/module3/module3';
 import { Module4 } from './components/module/module4/module4';
+import { Module5 } from './components/module/module5/module5';
 
 @Component({
-  imports: [RouterOutlet, Module1, Module2, Module3, Module4],
+  imports: [RouterOutlet, Module1, Module2, Module3, Module4, Module5],
   selector: 'app-root',
   styleUrl: './app.css',
   templateUrl: './app.html',
