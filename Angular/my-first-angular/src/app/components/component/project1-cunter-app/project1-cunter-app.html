@@ -1,0 +1,13 @@
+<div class="counter">
+  <p class="counter-title">Counter App</p>
+
+  <h1 class="counter-value" [class.positive]="value > 0" [class.negative]="value < 0">
+    {{ value }}
+  </h1>
+
+  <div class="counter-buttons">
+    <button class="btn-decrease" (click)="counterControll('decrease')" aria-label="Decrease">−</button>
+    <button class="btn-reset" (click)="counterControll('reset')">Reset</button>
+    <button class="btn-increase" (click)="counterControll('increase')" aria-label="Increase">+</button>
+  </div>
+</div>
