@@ -1,0 +1,40 @@
+<div>
+  <h3>Other Events</h3>
+
+  <!-- Input Event -->
+  <div>
+    <label>Input Event</label>
+    <input type="text" (input)="onInput($event)" />
+
+    <i> Input Value: {{ event.value }} | Event: {{ event.type }} </i>
+  </div>
+
+  <!-- Click Event -->
+  <div>
+    <label>Click Event</label>
+
+    <button (click)="onClick()">Click Me</button>
+
+    <i> Value: {{ event.value }} | Event: {{ event.type }} </i>
+  </div>
+
+  <!-- Mouse Enter Event -->
+  <div>
+    <label>Mouse Enter Event</label>
+
+    <div (mouseenter)="onMouseEnter()" style="padding: 20px; border: 1px solid gray">
+      Move your mouse here
+    </div>
+
+    <i> Value: {{ event.value }} | Event: {{ event.type }} </i>
+  </div>
+
+  <!-- Keyup Event -->
+  <div>
+    <label>Keyup Event</label>
+
+    <input type="text" (keyup)="onKeyUp($event)" />
+
+    <i> Key: {{ event.value }} | Event: {{ event.type }} </i>
+  </div>
+</div>
