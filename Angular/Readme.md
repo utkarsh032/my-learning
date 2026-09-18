@@ -27,6 +27,7 @@ These "modules" are plain components named `moduleN`, not Angular `NgModule`s.
 | 05 | [Angular CLI](notes/05-angular-cli.md)                              | `pages/login`, `pipe/`, `services/` |
 | 06 | [Component](notes/06-component.md)                                  | `module1`                           |
 | 07 | [Custom Component](notes/07-custom-component.md)                    | `profile`, `module2`                |
+| 08 | [Function Call on Button Click](notes/08-function-call-on-click.md) | `click-event`, `module3`            |
 
 ## Run it
 
