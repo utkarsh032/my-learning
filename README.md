@@ -11,6 +11,7 @@ Full projects live in their own repositories. This repo is the learning trail be
 | [javascript](javascript/)        | Language fundamentals, course notes, small exercises   | `js`            | Ongoing |
 | [dsa](dsa/)                      | Data structures, algorithms, solved problems           | `dsa`           | Ongoing |
 | [react](react/)                  | Components, hooks, state management, testing           | `react`         | Planned |
+| [Angular](Angular/)              | Components, templates, events, one practice app        | `angular21`     | Ongoing |
 | [sql](sql/)                      | SQL, data modelling, warehousing                       | `sql`           | Ongoing |
 | [system-design](system-design/)  | Scaling, architecture patterns, case studies           | `sd`            | Planned |
 
