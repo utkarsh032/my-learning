@@ -1,0 +1,13 @@
+<div>
+  <p>Get: {{ name }}</p>
+  <input type="text" (input)="getValue($event)" placeholder="Enter value" />
+  <p>Set: {{ setName }}</p>
+  <button (click)="setValue()">SET</button>
+</div>
+
+<div>
+  <h3>Get/Set: {{ email }}</h3>
+  <input type="email" placeholder="Enter email" #emailValue />
+  <button (click)="getEmail(emailValue.value)">GetEmail</button>
+  <button (click)="setEmail()">SetEmail</button>
+</div>
