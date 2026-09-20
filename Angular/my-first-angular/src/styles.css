@@ -35,3 +35,9 @@ input {
 button {
   cursor: pointer;
 }
+
+/* 2. Global style - applies in every component */
+.global-box {
+  background-color: #fee2e2;
+  border-color: #ef4444;
+}
