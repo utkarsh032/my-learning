@@ -1,0 +1,16 @@
+.style-options {
+  padding: 12px 0;
+}
+
+.box {
+  padding: 12px;
+  margin-bottom: 8px;
+  border: 2px solid #ccc;
+  border-radius: 6px;
+}
+
+/* 1. Component style - only applies inside this component */
+.component-box {
+  background-color: #dbeafe;
+  border-color: #3b82f6;
+}

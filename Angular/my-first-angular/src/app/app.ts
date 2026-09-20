@@ -7,9 +7,10 @@ import { Module4 } from './components/module/module4/module4';
 import { Module5 } from './components/module/module5/module5';
 import { Module6 } from './components/module/module6/module6';
 import { Module7 } from './components/module/module7/module7';
+import { Module8 } from './components/module/module8/module8';
 
 @Component({
-  imports: [RouterOutlet, Module1, Module2, Module3, Module4, Module5, Module6, Module7],
+  imports: [RouterOutlet, Module1, Module2, Module3, Module4, Module5, Module6, Module7, Module8],
   selector: 'app-root',
   styleUrl: './app.css',
   templateUrl: './app.html',
