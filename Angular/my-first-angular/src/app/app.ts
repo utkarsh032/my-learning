@@ -8,9 +8,21 @@ import { Module5 } from './components/module/module5/module5';
 import { Module6 } from './components/module/module6/module6';
 import { Module7 } from './components/module/module7/module7';
 import { Module8 } from './components/module/module8/module8';
+import { Module9 } from './components/module/module9/module9';
 
 @Component({
-  imports: [RouterOutlet, Module1, Module2, Module3, Module4, Module5, Module6, Module7, Module8],
+  imports: [
+    RouterOutlet,
+    Module1,
+    Module2,
+    Module3,
+    Module4,
+    Module5,
+    Module6,
+    Module7,
+    Module8,
+    Module9,
+  ],
   selector: 'app-root',
   styleUrl: './app.css',
   templateUrl: './app.html',

@@ -1,0 +1,61 @@
+<div class="control-flow-statement">
+  <h3>Control Flow Statement</h3>
+
+  <!-- If Else -->
+  <div>
+    <h4>If Else</h4>
+
+    @if (isLogin) {
+      <p>Welcome Utkarsh</p>
+    } @else {
+      <p>Please login first</p>
+    }
+
+    <button (click)="changeLogin()">Change Login</button>
+  </div>
+
+  <!-- Hide and Show -->
+  <div>
+    <h4>Hide and Show</h4>
+
+    @if (showText) {
+      <p>This text is visible</p>
+    }
+
+    <button (click)="show()">Show</button>
+    <button (click)="hide()">Hide</button>
+  </div>
+
+  <!-- Toggle -->
+  <div>
+    <h4>Toggle</h4>
+
+    @if (isToggle) {
+      <p>This text is toggled</p>
+    }
+
+    <button (click)="toggle()">{{ isToggle ? 'Hide' : 'Show' }}</button>
+  </div>
+
+  <!-- If and Else If -->
+  <div>
+    <h4>Result</h4>
+
+    <label>Enter Marks</label>
+    <input type="number" (input)="getMarks($event)" placeholder="Enter marks" />
+
+    @if (marks >= 33) {
+      <p>Pass</p>
+    }
+
+    @if (marks >= 75) {
+      <p>Grade A</p>
+    } @else if (marks >= 50) {
+      <p>Grade B</p>
+    } @else if (marks >= 33) {
+      <p>Grade C</p>
+    } @else {
+      <p>Fail</p>
+    }
+  </div>
+</div>
