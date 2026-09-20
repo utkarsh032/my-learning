@@ -1,0 +1,36 @@
+<div class="for-loop">
+  <h3>For Loop</h3>
+
+  <!-- Array of Names -->
+  <div>
+    <h4>Array of Names</h4>
+
+    @for (name of names; track name) {
+      <p>{{ name }}</p>
+    }
+  </div>
+
+  <!-- Array of Object -->
+  <div>
+    <h4>Array of Object</h4>
+
+    @for (user of users; track user.id) {
+      <p>{{ user.id }} - {{ user.name }} - {{ user.city }}</p>
+    }
+  </div>
+
+  <!-- Button Inside Loop -->
+  <div>
+    <h4>Button Inside Loop</h4>
+
+    @for (user of users; track user.id; let i = $index) {
+      <div>
+        <span>{{ i + 1 }}. {{ user.name }} </span>
+        <button (click)="showUser(user.name)">Show</button>
+        <button (click)="removeUser(user.id)">Remove</button>
+      </div>
+    }
+
+    <button (click)="addUser()">Add User</button>
+  </div>
+</div>
