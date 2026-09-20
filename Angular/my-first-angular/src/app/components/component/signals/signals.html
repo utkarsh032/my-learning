@@ -1,0 +1,41 @@
+<div class="signals">
+  <h3>Signals</h3>
+
+  <div>
+    <h1>Signal Value : {{ count() }}</h1>
+    <h1>Normal Value : {{ x }}</h1>
+  </div>
+  <button (click)="changeSignal()">Change Signal</button>
+  <button (click)="changeNormalValue()">Change Normal Value</button>
+
+  <h3>Counter with Signal</h3>
+
+  <div>
+    <p>Counter : {{ counter() }}</p>
+    <button (click)="decrease()">-</button>
+    <button (click)="reset()">Reset</button>
+    <button (click)="increase()">+</button>
+  </div>
+
+  <h3>Data Type with Signals</h3>
+
+  <div>
+    <p>{{ data() }}</p>
+    <button (click)="changeData()">Change Data</button>
+  </div>
+
+  <h3>Computed Signals</h3>
+  <div>
+    <p>a: {{ a }}</p>
+    <p>b: {{ b }}</p>
+    <p>c: {{ c }}</p>
+  </div>
+  <button (click)="updateA_B()">Update A and B</button>
+
+  <div>
+    <p>m: {{ m() }}</p>
+    <p>n: {{ n() }}</p>
+    <p>sum: {{ sum() }}</p>
+    <button (click)="updateM_N()">Update M and N</button>
+  </div>
+</div>
