@@ -12,6 +12,7 @@ import { Module9 } from './components/module/module9/module9';
 import { Module10 } from './components/module/module10/module10';
 import { Module11 } from './components/module/module11/module11';
 import { Module12 } from './components/module/module12/module12';
+import { Module13 } from './components/module/module13/module13';
 
 @Component({
   imports: [
@@ -28,6 +29,7 @@ import { Module12 } from './components/module/module12/module12';
     Module10,
     Module11,
     Module12,
+    Module13,
   ],
   selector: 'app-root',
   styleUrl: './app.css',
