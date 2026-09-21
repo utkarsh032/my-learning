@@ -1,0 +1,19 @@
+.dynamic-styling {
+  padding: 12px 0;
+}
+
+.pass {
+  color: green;
+  font-weight: bold;
+}
+
+.fail {
+  color: red;
+  font-weight: bold;
+}
+
+.active {
+  padding: 6px;
+  background-color: #dbeafe;
+  border: 1px solid #3b82f6;
+}
