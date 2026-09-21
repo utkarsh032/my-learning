@@ -1,0 +1,23 @@
+<div class="todo-app">
+  <h3>Todo App</h3>
+
+  <div>
+    <input #todoInput placeholder="Enter a new todo..." />
+    <button class="save-btn" (click)="saveTodo(todoInput.value); todoInput.value = ''">Save</button>
+  </div>
+
+  <div>
+    <ul>
+      @for (todo of todos; track $index) {
+        <li>
+          <p>{{ todo }}</p>
+          <div>
+            <button class="delete-btn" (click)="deleteTodo($index)">Delete</button>
+          </div>
+        </li>
+      } @empty {
+        <li>No todo added</li>
+      }
+    </ul>
+  </div>
+</div>

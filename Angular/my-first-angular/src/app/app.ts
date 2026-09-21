@@ -15,6 +15,7 @@ import { Module12 } from './components/module/module12/module12';
 import { Module13 } from './components/module/module13/module13';
 import { Module14 } from './components/module/module14/module14';
 import { Module15 } from './components/module/module15/module15';
+import { Module16 } from './components/module/module16/module16';
 import { Module17 } from './components/module/module17/module17';
 
 @Component({
@@ -35,6 +36,7 @@ import { Module17 } from './components/module/module17/module17';
     Module13,
     Module14,
     Module15,
+    Module16,
     Module17,
   ],
   selector: 'app-root',
