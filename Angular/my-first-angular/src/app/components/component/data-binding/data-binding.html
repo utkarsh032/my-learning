@@ -1,0 +1,25 @@
+<div class="data-binding">
+  <h3>Data Binding</h3>
+
+  <!-- Two Way Binding -->
+  <div>
+    <h4>Two Way Binding</h4>
+
+    <label>Enter Name</label>
+    <input type="text" [(ngModel)]="name" placeholder="Enter name" />
+
+    <p>Name : {{ name }}</p>
+
+    <button (click)="clearName()">Clear</button>
+  </div>
+
+  <!-- Value goes from component to input also -->
+  <div>
+    <h4>City</h4>
+
+    <label>Enter City</label>
+    <input type="text" [(ngModel)]="city" />
+
+    <p>City : {{ city }}</p>
+  </div>
+</div>
