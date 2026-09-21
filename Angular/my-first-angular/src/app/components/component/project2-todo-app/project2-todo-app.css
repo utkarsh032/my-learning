@@ -1,0 +1,44 @@
+.todo-app {
+  max-width: 400px;
+  padding: 12px 0;
+}
+
+.todo-app input {
+  width: 220px;
+}
+
+.todo-app ul {
+  margin-top: 16px;
+  padding: 0;
+  list-style: none;
+}
+
+.todo-app li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  margin-bottom: 8px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+}
+
+.todo-app li p {
+  margin: 0;
+}
+
+.save-btn,
+.delete-btn {
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+}
+
+.save-btn {
+  background-color: #4f46e5;
+}
+
+.delete-btn {
+  background-color: #ef4444;
+}
