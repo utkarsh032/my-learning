@@ -1,0 +1,12 @@
+<div class="page">
+  <h4>Users Page</h4>
+
+  <!-- Dynamic links - every link has a different id and name in the url -->
+  <ul>
+    @for (user of users; track user.id) {
+      <li>
+        <a [routerLink]="['/user', user.id, user.name]">{{ user.name }}</a>
+      </li>
+    }
+  </ul>
+</div>

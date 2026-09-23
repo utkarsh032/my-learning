@@ -1,0 +1,30 @@
+<div class="routing">
+  <h3>Routing</h3>
+
+  <!-- Header with links of all pages and active class -->
+  <app-header></app-header>
+
+  <!-- Pass data with router link -->
+  <div class="section">
+    <h4>Pass data with router link</h4>
+    <a routerLink="/profile" [queryParams]="{ name: 'Utkarsh', age: 22 }">Open Profile with data</a>
+  </div>
+
+  <!-- Pass data with button click -->
+  <div class="section">
+    <h4>Pass data with button click</h4>
+    <button type="button" (click)="goToProfile()">Open Profile with data</button>
+    <button type="button" (click)="openUser(5, 'Neha')">Open User 5</button>
+  </div>
+
+  <!-- 404 page with wild card route -->
+  <div class="section">
+    <h4>Wild card route (404)</h4>
+    <a routerLink="/something-wrong">Open a wrong url</a>
+  </div>
+
+  <!-- The page of the current url is shown here -->
+  <div class="outlet">
+    <router-outlet></router-outlet>
+  </div>
+</div>
