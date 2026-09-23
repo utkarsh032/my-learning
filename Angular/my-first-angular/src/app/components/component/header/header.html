@@ -1,0 +1,10 @@
+<!-- routerLink opens the page without reloading the whole app (href reloads it) -->
+<!-- routerLinkActive adds the class on the link of the current page -->
+<nav class="header">
+  <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+  <a routerLink="/about" routerLinkActive="active">About</a>
+  <a routerLink="/contact" routerLinkActive="active">Contact</a>
+  <a routerLink="/login" routerLinkActive="active">Login</a>
+  <a routerLink="/profile" routerLinkActive="active">Profile</a>
+  <a routerLink="/users" routerLinkActive="active">Users</a>
+</nav>

@@ -1,0 +1,19 @@
+.routing {
+  padding: 12px 0;
+}
+
+.section {
+  margin-top: 12px;
+}
+
+.section button {
+  margin-right: 8px;
+}
+
+.outlet {
+  margin-top: 16px;
+  padding: 12px;
+  border: 1px dashed #90a4ae;
+  border-radius: 5px;
+  background-color: #fff;
+}
