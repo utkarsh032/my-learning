@@ -1,0 +1,218 @@
+<div class="forms">
+  <div>
+    <h1>Basic Reactive Form</h1>
+
+    <form (submit)="displayDetails()">
+      <div>
+        <label>Username:</label>
+        <input type="text" placeholder="username" [formControl]="username" />
+      </div>
+
+      <div>
+        <label>Password:</label>
+        <input type="password" placeholder="password" [formControl]="password" />
+      </div>
+
+      <button type="submit">Login</button>
+      <button type="button" (click)="setValues()">Default</button>
+    </form>
+  </div>
+  <div>
+    <h1>Reactive Form Group</h1>
+    <form [formGroup]="profileDetails" (ngSubmit)="onSubmit()">
+      <div>
+        <label>name</label>
+        <input placeholder="name" formControlName="name" />
+      </div>
+      <div>
+        <label>email</label>
+        <input placeholder="email" formControlName="email" />
+      </div>
+      <div>
+        <label>address</label>
+        <input placeholder="address" formControlName="address" />
+      </div>
+      <button>Submit</button>
+    </form>
+  </div>
+  <div>
+    <h1>Form Validation</h1>
+    <form [formGroup]="signupForm" (ngSubmit)="onSignup()">
+      <div>
+        <label>Name:</label>
+        <input placeholder="name" formControlName="name" />
+        @if (name?.invalid && name?.touched) {
+          <div class="error">
+            @if (name?.errors?.['required']) {
+              <p>Name is required</p>
+            }
+            @if (name?.errors?.['minlength']) {
+              <p>Name must be at least 3 characters</p>
+            }
+            @if (name?.errors?.['maxlength']) {
+              <p>Name cannot be more than 20 characters</p>
+            }
+          </div>
+        }
+      </div>
+
+      <div>
+        <label>Email:</label>
+        <input placeholder="email" formControlName="email" />
+        @if (email?.invalid && email?.touched) {
+          <div class="error">
+            @if (email?.errors?.['required']) {
+              <p>Email is required</p>
+            }
+            @if (email?.errors?.['email']) {
+              <p>Enter a valid email</p>
+            }
+          </div>
+        }
+      </div>
+
+      <div>
+        <label>Password:</label>
+        <input type="password" placeholder="password" formControlName="password" />
+        @if (signupPassword?.invalid && signupPassword?.touched) {
+          <div class="error">
+            @if (signupPassword?.errors?.['required']) {
+              <p>Password is required</p>
+            }
+            @if (signupPassword?.errors?.['minlength']) {
+              <p>
+                Password must be at least
+                {{ signupPassword?.errors?.['minlength'].requiredLength }} characters (you typed
+                {{ signupPassword?.errors?.['minlength'].actualLength }})
+              </p>
+            }
+            @if (signupPassword?.errors?.['maxlength']) {
+              <p>Password cannot be more than 12 characters</p>
+            }
+          </div>
+        }
+      </div>
+
+      <button type="submit" [disabled]="signupForm.invalid">Sign Up</button>
+    </form>
+  </div>
+
+  <div>
+    <h1>Angular Template Driven Form</h1>
+
+    <!-- #userForm="ngForm" gives us the whole form; each ngModel + name becomes one field -->
+    <form #userForm="ngForm" (ngSubmit)="submitTemplateForm(userForm.value)">
+      <div>
+        <label>Name:</label>
+        <input type="text" placeholder="name" name="name" ngModel />
+      </div>
+
+      <div>
+        <label>Email:</label>
+        <input type="email" placeholder="email" name="email" ngModel />
+      </div>
+
+      <div>
+        <label>City:</label>
+        <select name="city" ngModel>
+          <option value="">-- select city --</option>
+          <option value="delhi">Delhi</option>
+          <option value="mumbai">Mumbai</option>
+          <option value="bangalore">Bangalore</option>
+          <option value="noida">Noida</option>
+        </select>
+      </div>
+
+      <div>
+        <label>Age:</label>
+        <input type="range" name="age" min="18" max="60" [ngModel]="25" #age="ngModel" />
+        <span>{{ age.value }}</span>
+      </div>
+
+      <button type="submit">Submit</button>
+    </form>
+
+    <!-- live value while typing -->
+    <p>Live value: {{ userForm.value | json }}</p>
+
+    <!-- value after clicking Submit -->
+    @if (submittedData) {
+      <h3>Submitted Data</h3>
+      <p>Name: {{ submittedData.name }}</p>
+      <p>Email: {{ submittedData.email }}</p>
+      <p>City: {{ submittedData.city }}</p>
+      <p>Age: {{ submittedData.age }}</p>
+    }
+  </div>
+
+  <div>
+    <h1>Template Driven Form Validation</h1>
+
+    <!-- validation is added as plain HTML attributes: required, minlength, maxlength, email -->
+    <form #validForm="ngForm" (ngSubmit)="submitValidForm(validForm)">
+      <div>
+        <label>Name:</label>
+        <input
+          type="text"
+          placeholder="name"
+          name="name"
+          ngModel
+          required
+          minlength="3"
+          maxlength="15"
+          #nameField="ngModel"
+        />
+        @if (nameField.invalid && nameField.touched) {
+          <div class="error">
+            @if (nameField.errors?.['required']) {
+              <p>Name is required</p>
+            }
+            @if (nameField.errors?.['minlength']) {
+              <p>Name must be at least 3 characters</p>
+            }
+          </div>
+        }
+      </div>
+
+      <div>
+        <label>Email:</label>
+        <input
+          type="email"
+          placeholder="email"
+          name="email"
+          ngModel
+          required
+          email
+          #emailField="ngModel"
+        />
+        @if (emailField.invalid && emailField.touched) {
+          <div class="error">
+            @if (emailField.errors?.['required']) {
+              <p>Email is required</p>
+            }
+            @if (emailField.errors?.['email']) {
+              <p>Enter a valid email</p>
+            }
+          </div>
+        }
+      </div>
+
+      <div>
+        <label>Course:</label>
+        <select name="course" ngModel required #courseField="ngModel">
+          <option value="">-- select course --</option>
+          <option value="angular">Angular</option>
+          <option value="react">React</option>
+          <option value="node">Node</option>
+        </select>
+        @if (courseField.invalid && courseField.touched) {
+          <div class="error">
+            <p>Please select a course</p>
+          </div>
+        }
+      </div>
+
+      <button type="submit" [disabled]="validForm.invalid">Submit</button>
+    </form>
+  </div>
+</div>
