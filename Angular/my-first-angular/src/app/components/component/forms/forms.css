@@ -1,0 +1,28 @@
+.forms {
+  padding: 12px 0;
+}
+
+/* Form Validation styles - Angular adds these classes to inputs automatically */
+input.ng-invalid.ng-touched,
+select.ng-invalid.ng-touched {
+  border: 2px solid red;
+}
+
+input.ng-valid.ng-touched,
+select.ng-valid.ng-touched {
+  border: 2px solid green;
+}
+
+.error {
+  color: red;
+  font-size: 13px;
+}
+
+.error p {
+  margin: 4px 0;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
