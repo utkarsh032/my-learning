@@ -19,6 +19,7 @@ import { Module16 } from './components/module/module16/module16';
 import { Module17 } from './components/module/module17/module17';
 import { Module18 } from './components/module/module18/module18';
 import { Module19 } from './components/module/module19/module19';
+import { Module20 } from './components/module/module20/module20';
 
 @Component({
   imports: [
@@ -42,6 +43,7 @@ import { Module19 } from './components/module/module19/module19';
     Module17,
     Module18,
     Module19,
+    Module20,
   ],
   selector: 'app-root',
   styleUrl: './app.css',
@@ -69,5 +71,13 @@ export class App {
 
   addTwoNumber(a: number, b: number) {
     return a + b;
+  }
+
+  scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  scrollToBottom() {
+    window.scrollTo({ top: document.documentElement.scrollHeight, behavior: 'smooth' });
   }
 }
