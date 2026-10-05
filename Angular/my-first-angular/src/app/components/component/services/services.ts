@@ -1,6 +1,7 @@
 import { Component, inject, OnInit, signal } from '@angular/core';
 import { ProductService } from './product-service/product-service';
 import { CookingRecipeService } from './cooking-recipe-service/cooking-recipe-service';
+import { Recipe, RecipeInterfaceTs } from './interface/recipe.interface.ts';
 
 @Component({
   imports: [],
@@ -10,7 +11,7 @@ import { CookingRecipeService } from './cooking-recipe-service/cooking-recipe-se
 })
 export class Services implements OnInit {
   products = signal<any[]>([]);
-  recipes = signal<any[]>([]);
+  recipes = signal<Recipe[]>([]);
 
   limit = 4;
   skip = signal(0); // current starting point
@@ -32,10 +33,12 @@ export class Services implements OnInit {
   }
 
   loadRecipes() {
-    this.cookingRecipeService.getCookingRecipeData(this.skip()).subscribe((data: any) => {
-      this.recipes.set(data.recipes);
-      this.total.set(data.total);
-    });
+    this.cookingRecipeService
+      .getCookingRecipeData(this.skip())
+      .subscribe((data: RecipeInterfaceTs) => {
+        this.recipes.set(data.recipes);
+        this.total.set(data.total);
+      });
   }
 
   // Cooking Recipe
