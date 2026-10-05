@@ -1,0 +1,18 @@
+<div class="page">
+  <h4>Products Page</h4>
+
+  <!-- Product list from the api -->
+  <!-- Every card is a dynamic link - the product id goes in the url (product/1, product/2, ...) -->
+  <div class="productGrid">
+    @for (product of products(); track product.id) {
+      <a class="productCard" [routerLink]="['/product', product.id]">
+        <img [src]="product.thumbnail" [alt]="product.title" />
+        <h5>{{ product.title }}</h5>
+        <p class="category">{{ product.category }}</p>
+        <p class="price">${{ product.price }}</p>
+      </a>
+    } @empty {
+      <p>Loading products...</p>
+    }
+  </div>
+</div>

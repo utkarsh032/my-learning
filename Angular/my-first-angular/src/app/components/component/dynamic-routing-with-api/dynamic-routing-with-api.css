@@ -1,0 +1,27 @@
+.dynamicRouting {
+  padding: 12px 0;
+}
+
+.nav {
+  display: flex;
+  gap: 8px;
+  padding: 10px;
+  background-color: #263238;
+  border-radius: 5px;
+}
+
+.nav a {
+  padding: 6px 12px;
+  color: #eceff1;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.nav a:hover {
+  background-color: #37474f;
+}
+
+.nav .active {
+  background-color: #1565c0;
+  color: #fff;
+}

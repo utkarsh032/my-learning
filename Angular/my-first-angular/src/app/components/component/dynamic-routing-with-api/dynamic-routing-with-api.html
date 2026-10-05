@@ -1,0 +1,18 @@
+<div class="dynamicRouting">
+  <h1>Dynamic Routing with API</h1>
+
+  <!-- Two routes - home and products -->
+  <nav class="nav">
+    <a
+      routerLink="/"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      (click)="showOutlet()"
+      >Home</a
+    >
+    <a routerLink="/products" routerLinkActive="active" (click)="showOutlet()">Products</a>
+  </nav>
+
+  <p>Open Products and click a product - it opens the details page of that product (product/:id).</p>
+  <p>The pages open in the router outlet of Module 19.</p>
+</div>

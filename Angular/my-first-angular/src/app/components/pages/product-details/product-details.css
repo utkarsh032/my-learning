@@ -1,0 +1,32 @@
+.page {
+  padding: 8px 0;
+}
+
+.details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 12px;
+}
+
+.details img {
+  width: 220px;
+  height: 220px;
+  object-fit: contain;
+  border: 1px solid #cfd8dc;
+  border-radius: 8px;
+  background-color: #fff;
+}
+
+.info {
+  flex: 1;
+  min-width: 220px;
+}
+
+.info h3 {
+  margin: 0 0 8px;
+}
+
+.info p {
+  margin: 6px 0;
+}

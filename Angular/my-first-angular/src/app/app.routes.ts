@@ -6,6 +6,8 @@ import { Login } from './components/pages/login/login';
 import { Profile } from './components/pages/profile/profile';
 import { Users } from './components/pages/users/users';
 import { UserDetails } from './components/pages/user-details/user-details';
+import { Products } from './components/pages/products/products';
+import { ProductDetails } from './components/pages/product-details/product-details';
 import { PageNotFound } from './components/pages/page-not-found/page-not-found';
 
 // Register every page component with a path
@@ -29,6 +31,10 @@ export const routes: Routes = [
   // Dynamic routing - ':id' and ':name' can be any value
   { path: 'users', component: Users },
   { path: 'user/:id/:name', component: UserDetails },
+
+  // Dynamic routing with API - the product list and the product details come from an api
+  { path: 'products', component: Products },
+  { path: 'product/:id', component: ProductDetails },
 
   // Wild card route - matches any path that is not in the list above
   // It must be the last route, otherwise it will match every page
