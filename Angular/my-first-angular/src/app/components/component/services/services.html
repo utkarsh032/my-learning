@@ -1,0 +1,70 @@
+<div class="services">
+  <h1>Angular Services</h1>
+
+  <div>
+    <h3>Products</h3>
+    <div class="products">
+      @for (product of products(); track product.id) {
+        <div class="productCard">
+          <p>{{ product.name }}</p>
+          <p>{{ product.description }}</p>
+          <p>{{ product.price }}</p>
+          <p>{{ product.category }}</p>
+        </div>
+      }
+    </div>
+    <button (click)="loadData()">load-Data</button>
+  </div>
+
+  <div>
+    <!-- API call in service -->
+    <div>
+      <h3>Cooking-Recipe</h3>
+      <div class="pagination">
+        <button (click)="paginateRecipe('prev')" [disabled]="skip() === 0">Prev</button>
+        <span>Page {{ skip() / limit + 1 }}</span>
+        <button (click)="paginateRecipe('next')" [disabled]="skip() + limit >= total()">
+          Next
+        </button>
+      </div>
+
+      <div class="recipeGrid">
+        @for (recipe of recipes(); track recipe.id) {
+          <div class="recipeCard">
+            <img class="recipeImg" [src]="recipe.image" [alt]="recipe.name" />
+
+            <div class="recipeBody">
+              <h4 class="recipeName">{{ recipe.name }}</h4>
+
+              <div class="recipeMeta">
+                <span class="badge">{{ recipe.cuisine }}</span>
+                <span class="badge">{{ recipe.difficulty }}</span>
+                <span class="badge">⭐ {{ recipe.rating }}</span>
+                <span class="badge">⏱ {{ recipe.prepTimeMinutes + recipe.cookTimeMinutes }} min</span>
+              </div>
+
+              <!-- ingredients is an array, so loop over it too -->
+              <details class="recipeSection">
+                <summary>Ingredients ({{ recipe.ingredients.length }})</summary>
+                <ul>
+                  @for (item of recipe.ingredients; track $index) {
+                    <li>{{ item }}</li>
+                  }
+                </ul>
+              </details>
+
+              <details class="recipeSection">
+                <summary>Instructions ({{ recipe.instructions.length }} steps)</summary>
+                <ol>
+                  @for (item of recipe.instructions; track $index) {
+                    <li>{{ item }}</li>
+                  }
+                </ol>
+              </details>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+</div>

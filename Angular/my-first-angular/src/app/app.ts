@@ -20,6 +20,7 @@ import { Module17 } from './components/module/module17/module17';
 import { Module18 } from './components/module/module18/module18';
 import { Module19 } from './components/module/module19/module19';
 import { Module20 } from './components/module/module20/module20';
+import { Module21 } from './components/module/module21/module21';
 
 @Component({
   imports: [
@@ -44,6 +45,7 @@ import { Module20 } from './components/module/module20/module20';
     Module18,
     Module19,
     Module20,
+    Module21,
   ],
   selector: 'app-root',
   styleUrl: './app.css',
