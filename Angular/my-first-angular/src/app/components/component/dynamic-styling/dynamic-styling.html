@@ -1,0 +1,36 @@
+<div class="dynamic-styling">
+  <h3>Dynamic Styling</h3>
+
+  <!-- Basic Dynamic Style -->
+  <div>
+    <h4>Basic Dynamic Style</h4>
+
+    <p [style.color]="color" [style.fontSize.px]="size">Color and size come from the component</p>
+  </div>
+
+  <!-- Style with Condition -->
+  <div>
+    <h4>Style with Condition</h4>
+
+    <label>Enter Marks</label>
+    <input type="number" (input)="getMarks($event)" placeholder="Enter marks" />
+
+    <p [style.color]="marks >= 33 ? 'green' : 'red'">Marks : {{ marks }}</p>
+    <p [class.pass]="marks >= 33" [class.fail]="marks < 33">Result</p>
+  </div>
+
+  <!-- Style with Button Click -->
+  <div>
+    <h4>Style with Button Click</h4>
+
+    <p [style.color]="color">Color : {{ color }}</p>
+
+    <button (click)="changeColor('red')">Red</button>
+    <button (click)="changeColor('green')">Green</button>
+    <button (click)="changeColor('blue')">Blue</button>
+
+    <p [class.active]="isActive">Class is added when active</p>
+
+    <button (click)="toggleActive()">Toggle Class</button>
+  </div>
+</div>

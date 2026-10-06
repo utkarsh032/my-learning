@@ -1,0 +1,73 @@
+<div class="directive">
+  <h3>Directives</h3>
+
+  <!-- Structural directives change the DOM, they add or remove the element -->
+
+  <!-- Hide and Show -->
+  <div>
+    <h4>*ngIf - Hide and Show</h4>
+
+    <p *ngIf="show">Common Directives</p>
+
+    <button type="button" (click)="switchHeading()">{{ btnText }}</button>
+  </div>
+
+  <!-- Loop -->
+  <div>
+    <h4>*ngFor</h4>
+
+    <ul>
+      <li *ngFor="let fruit of fruits; let i = index">{{ i + 1 }}. {{ fruit }}</li>
+    </ul>
+
+    <div *ngFor="let fruitData of fruitsData">
+      <p>{{ fruitData.name }} - {{ fruitData.price }} - {{ fruitData.type }}</p>
+    </div>
+  </div>
+
+  <!-- If Else, ng-template holds the else part -->
+  <div>
+    <h4>*ngIf with Else</h4>
+
+    <div *ngIf="login; else logout">
+      <p>Welcome Utkarsh</p>
+    </div>
+
+    <ng-template #logout>
+      <p>Please login first</p>
+    </ng-template>
+
+    <button type="button" (click)="changeLogin()">{{ login ? 'Logout' : 'Login' }}</button>
+  </div>
+
+  <!-- One condition for each heading -->
+  <div>
+    <h4>*ngIf with Condition</h4>
+
+    <p *ngIf="heading === 0">Heading 0</p>
+    <p *ngIf="heading === 1">Heading 1</p>
+    <p *ngIf="heading === 2">Heading 2</p>
+    <p *ngIf="heading === 3">Heading 3</p>
+
+    <button type="button" (click)="changeHeading()">Change</button>
+  </div>
+
+  <!-- Switch, ngSwitchDefault runs when no case matches -->
+  <div>
+    <h4>[ngSwitch]</h4>
+
+    <div [ngSwitch]="color">
+      <div *ngSwitchCase="'red'" class="box red"></div>
+      <div *ngSwitchCase="'green'" class="box green"></div>
+      <div *ngSwitchCase="'orange'" class="box orange"></div>
+      <div *ngSwitchCase="'black'" class="box black"></div>
+      <div *ngSwitchCase="'wheat'" class="box wheat"></div>
+      <div *ngSwitchDefault class="box sky-blue"></div>
+    </div>
+
+    <button type="button" *ngFor="let item of colors" (click)="changeColor(item)">
+      {{ item }}
+    </button>
+    <button type="button" (click)="changeColor('none')">None</button>
+  </div>
+</div>

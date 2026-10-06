@@ -5,9 +5,50 @@ import { Module2 } from './components/module/module2/module2';
 import { Module3 } from './components/module/module3/module3';
 import { Module4 } from './components/module/module4/module4';
 import { Module5 } from './components/module/module5/module5';
+import { Module6 } from './components/module/module6/module6';
+import { Module7 } from './components/module/module7/module7';
+import { Module8 } from './components/module/module8/module8';
+import { Module9 } from './components/module/module9/module9';
+import { Module10 } from './components/module/module10/module10';
+import { Module11 } from './components/module/module11/module11';
+import { Module12 } from './components/module/module12/module12';
+import { Module13 } from './components/module/module13/module13';
+import { Module14 } from './components/module/module14/module14';
+import { Module15 } from './components/module/module15/module15';
+import { Module16 } from './components/module/module16/module16';
+import { Module17 } from './components/module/module17/module17';
+import { Module18 } from './components/module/module18/module18';
+import { Module19 } from './components/module/module19/module19';
+import { Module20 } from './components/module/module20/module20';
+import { Module21 } from './components/module/module21/module21';
+import { Module22 } from './components/module/module22/module22';
 
 @Component({
-  imports: [RouterOutlet, Module1, Module2, Module3, Module4, Module5],
+  imports: [
+    RouterOutlet,
+    Module1,
+    Module2,
+    Module3,
+    Module4,
+    Module5,
+    Module6,
+    Module7,
+    Module8,
+    Module9,
+    Module10,
+    Module11,
+    Module12,
+    Module13,
+    Module14,
+    Module15,
+    Module16,
+    Module17,
+    Module18,
+    Module19,
+    Module20,
+    Module21,
+    Module22,
+  ],
   selector: 'app-root',
   styleUrl: './app.css',
   templateUrl: './app.html',
@@ -34,5 +75,13 @@ export class App {
 
   addTwoNumber(a: number, b: number) {
     return a + b;
+  }
+
+  scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  scrollToBottom() {
+    window.scrollTo({ top: document.documentElement.scrollHeight, behavior: 'smooth' });
   }
 }

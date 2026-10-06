@@ -1,0 +1,5 @@
+/* 3. Extra global file - registered in angular.json > styles */
+.theme-box {
+  background-color: #ffedd5;
+  border-color: #f97316;
+}

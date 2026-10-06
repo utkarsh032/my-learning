@@ -1,0 +1,26 @@
+<div class="page">
+  <h4>Product Details Page</h4>
+
+  <!-- 'as item' gives the loaded product a short name to use inside the block -->
+  @if (product(); as item) {
+    <div class="details">
+      <img [src]="item.thumbnail" [alt]="item.title" />
+
+      <div class="info">
+        <h3>{{ item.title }}</h3>
+        <p>{{ item.description }}</p>
+        <p><b>Price:</b> ${{ item.price }}</p>
+        <p><b>Category:</b> {{ item.category }}</p>
+        @if (item.brand) {
+          <p><b>Brand:</b> {{ item.brand }}</p>
+        }
+        <p><b>Rating:</b> ⭐ {{ item.rating }}</p>
+        <p><b>Stock:</b> {{ item.stock }} ({{ item.availabilityStatus }})</p>
+      </div>
+    </div>
+  } @else {
+    <p>{{ message() }}</p>
+  }
+
+  <a routerLink="/products">Back to Products</a>
+</div>

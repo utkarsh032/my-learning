@@ -1,0 +1,72 @@
+<div class="switch-statement">
+  <h3>Switch Statement</h3>
+
+  <!-- Use switch when one value has many fixed options, if else becomes too long -->
+
+  <!-- Basic Switch -->
+  <div>
+    <h4>Basic Switch</h4>
+
+    @switch (day) {
+      @case ('monday') {
+        <p>Start of the week</p>
+      }
+      @case ('friday') {
+        <p>Last working day</p>
+      }
+      @case ('sunday') {
+        <p>Holiday</p>
+      }
+      @default {
+        <p>Normal day</p>
+      }
+    }
+  </div>
+
+  <!-- Switch with Button -->
+  <div>
+    <h4>Switch with Button</h4>
+
+    @switch (color) {
+      @case ('red') {
+        <p>Red is selected</p>
+      }
+      @case ('green') {
+        <p>Green is selected</p>
+      }
+      @case ('blue') {
+        <p>Blue is selected</p>
+      }
+      @default {
+        <p>No color selected</p>
+      }
+    }
+
+    <button (click)="changeColor('red')">Red</button>
+    <button (click)="changeColor('green')">Green</button>
+    <button (click)="changeColor('blue')">Blue</button>
+  </div>
+
+  <!-- Switch with Input -->
+  <div>
+    <h4>Switch with Input</h4>
+
+    <label>Enter Role</label>
+    <input type="text" (input)="getRole($event)" placeholder="admin, user, guest" />
+
+    @switch (role) {
+      @case ('admin') {
+        <p>Admin can do everything</p>
+      }
+      @case ('user') {
+        <p>User can only read</p>
+      }
+      @case ('guest') {
+        <p>Guest has no access</p>
+      }
+      @default {
+        <p>Enter a valid role</p>
+      }
+    }
+  </div>
+</div>

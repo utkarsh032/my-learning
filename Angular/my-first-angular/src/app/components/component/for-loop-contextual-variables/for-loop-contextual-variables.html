@@ -1,0 +1,63 @@
+<div class="for-loop-contextual-variables">
+  <h3>For Loop Contextual Variables</h3>
+
+  <!-- Contextual variables give extra information about the current row of the loop -->
+
+  <!-- Count and Index -->
+  <div>
+    <h4>Count and Index</h4>
+
+    @for (user of users; track user.id) {
+      <p>{{ $index }} - {{ user.name }} - total {{ $count }}</p>
+    }
+  </div>
+
+  <!-- First and Last -->
+  <div>
+    <h4>First and Last</h4>
+
+    @for (user of users; track user.id) {
+      <p>
+        {{ user.name }}
+        @if ($first) {
+          <span>- First User</span>
+        }
+        @if ($last) {
+          <span>- Last User</span>
+        }
+      </p>
+    }
+  </div>
+
+  <!-- Odd and Even -->
+  <div>
+    <h4>Odd and Even</h4>
+
+    @for (user of users; track user.id) {
+      <p>{{ user.name }} - {{ $even ? 'Even Row' : 'Odd Row' }}</p>
+    }
+  </div>
+
+  <!-- Rename with let -->
+  <div>
+    <h4>Rename with let</h4>
+
+    @for (user of users; track user.id; let i = $index, last = $last) {
+      <p>{{ i + 1 }}. {{ user.name }} {{ last ? '(last one)' : '' }}</p>
+    }
+  </div>
+
+  <!-- Empty Block -->
+  <div>
+    <h4>Empty Block</h4>
+
+    @for (fruit of fruits; track fruit) {
+      <p>{{ fruit }}</p>
+    } @empty {
+      <p>No fruit in the list</p>
+    }
+
+    <button (click)="addFruits()">Add Fruits</button>
+    <button (click)="clearFruits()">Clear Fruits</button>
+  </div>
+</div>
